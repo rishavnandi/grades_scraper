@@ -1,18 +1,17 @@
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
 
 service = Service(executable_path="D:\projects\grades_scraper\chromedriver.exe")
 
 driver = webdriver.Chrome(service=service)
 
+URL = "https://www.your-university-website.com/"
+
 # Navigate to the result website
-driver.get("http://49.249.101.34/CGUResults/search-result.php?hasv=Qi5UZWNoKjQqUmVndWxhcioyMDIxLTIwMjIqSnVuZSBFdmVuIFNlbSBFeGFtIDIwMjM=")
+driver.get(URL)
 driver.maximize_window()
 
 # Create an empty list to store the data
